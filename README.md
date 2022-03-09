@@ -1,4 +1,4 @@
-# Simple_SMTP
+# Simple Mail Transfer Protocol
 * SMTP is an application layer protocol. 
 * The client who wants to send the mail opens a TCP connection to the SMTP server and then sends the mail across the connection.
 * The SMTP server is an always-on listening mode. 
