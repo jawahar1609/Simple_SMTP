@@ -38,7 +38,7 @@ clientSocket = ssl.wrap_socket(clientSocket)
 
 # email and password for authentication
 email = (base64.b64encode('jawahar@gmail.com'.encode())+ ('\r\n').encode())
-password= (base64.b64encode('jawahar'.encode())+ ('\r\n').encode())
+password= (base64.b64encode('******'.encode())+ ('\r\n').encode())
 
 #Authentication 
 clientSocket.send('AUTH LOGIN \r\n'.encode())
@@ -62,13 +62,13 @@ if recv1[:3] != '235':
     print ('235 reply not received from server')
 
 # Send MAIL FROM command and print server response.
-clientSocket.send("MAIL FROM: <jawaharc@gmail.com>\r\n".encode())
+clientSocket.send("MAIL FROM: <jawahar_send@gmail.com>\r\n".encode())
 recv2 = clientSocket.recv(1024).decode()
 if recv2[:3] != '250':
     print ('250 reply not received from server.')
 
 # Send RCPT TO command and print server response.
-clientSocket.send("RCPT TO: <jawaharc@gmail.com>\r\n".encode())
+clientSocket.send("RCPT TO: <jawahar_send@gmail.com>\r\n".encode())
 recv2 = clientSocket.recv(1024).decode()
 print (recv2)
 
@@ -79,7 +79,7 @@ print (recv2)
 
 #Send data
 clientSocket.send(("Subject: SMTP Email Test! \r\n").encode())
-clientSocket.send(("To: jawaharc@gmail.com \r\n").encode())
+clientSocket.send(("To: jawahar_send@gmail.com \r\n").encode())
 clientSocket.send(msg.encode())
 
 # Message ends with a single period.
